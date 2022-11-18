@@ -5,7 +5,6 @@ import streamlit as st
 
 df = pd.read_csv('wcmatches.csv')
 
-#print(df)
 
 list_teams = list_unique_values = df['home_team'].unique()
 
