@@ -5,6 +5,11 @@ import streamlit as st
 
 df = pd.read_csv('wcmatches.csv')
 
-print(df)
+#print(df)
+
+list_teams = list_unique_values = df['home_team'].unique()
+
+team_a = st.selectbox("Team A", list_teams)
+team_b = st.selectbox("Team B", list_teams)
 
 st.dataframe(df)
