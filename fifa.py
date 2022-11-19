@@ -44,22 +44,22 @@ with col2:
     st.write("Lost: "+str(len(df_matches_lost_team_b)))
 
 
-df_recent_matches_won_team_a = df.query("winning_team == @team_a and year>1995")
-df_recent_matches_lost_team_a = df.query("losing_team == @team_a and year>1995")
+df_recent_matches_won_team_a = df.query("winning_team == @team_a and year>2000")
+df_recent_matches_lost_team_a = df.query("losing_team == @team_a and year>2000")
 
-df_recent_matches_won_team_b = df.query("winning_team == @team_b and year>1995")
-df_recent_matches_lost_team_b = df.query("losing_team == @team_b and year>1995")
+df_recent_matches_won_team_b = df.query("winning_team == @team_b and year>2000")
+df_recent_matches_lost_team_b = df.query("losing_team == @team_b and year>2000")
 
 #print(df_matches_won_team_a.to_string(index=False))
 
 
 with col1:
-    st.write("Recent Matches")
+    st.write("Last 5 World Cups")
     st.write("Won: "+ str(len(df_recent_matches_won_team_a)))
     st.write("Lost: "+str(len(df_recent_matches_lost_team_a)))
 
 with col2:
-    st.write("Recent Matches")
+    st.write("Last 5 World Cups")
     #st.write("\r\n"+ team_b)
     st.write("Won: " + str(len(df_recent_matches_won_team_b)))
     st.write("Lost: "+str(len(df_recent_matches_lost_team_b)))
