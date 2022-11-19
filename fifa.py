@@ -2,8 +2,7 @@ import pandas as pd
 import streamlit as st
 #print("hello")
 
-list_teams_wc22 = 
-["Qatar", "Ecuador", "Senegal", "Netherlands",
+list_teams_wc22 = ["Qatar", "Ecuador", "Senegal", "Netherlands",
 "England", "Iran", "USA", "Wales",
 "Argentina", "Saudi Arabia", "Mexico", "Poland",
 "France", "Australia", "Denmark", "Tunisia",
