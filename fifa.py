@@ -57,9 +57,9 @@ for country in list_teams_wc22:
     except:
         list_all_win_lose_ratios.append(0)
 
-df_countries_ratios = pd.DataFrame(list(zip(list_teams_wc22, list_all_total_games_played, list_all_win_lose_ratios)),columns =['country', 'games_played', 'ratio']).sort_values('ratio', ascending=False)
+df_countries_ratios = pd.DataFrame(list(zip(list_teams_wc22, list_all_total_games_played, list_all_win_lose_ratios)),columns =['Country', 'Total Matches', 'W/L ratio']).sort_values('W/L ratio', ascending=False)
 
-print(df_countries_ratios.to_string(index=False))
+df_countries_ratios.set_index('Country', inplace=True)
 
 st.write("List of countries")
 st.table(df_countries_ratios)
