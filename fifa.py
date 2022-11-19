@@ -65,6 +65,8 @@ with col2:
     st.write("Lost: "+str(len(df_recent_matches_lost_team_b)))
 
 list_all_win_lose_ratios = []
+list_all_wins = []
+list_all_losses = []
 list_all_total_games_played = []
 
 for country in list_teams_wc22:
@@ -72,12 +74,14 @@ for country in list_teams_wc22:
     df_matches_lost = df.query("losing_team == @country")
 
     list_all_total_games_played.append(len(df_matches_won) + len(df_matches_lost))
+    list_all_wins.append(len(df_matches_won))
+    list_all_losses.append(len(df_matches_lost))
     try:
         list_all_win_lose_ratios.append(len(df_matches_won) / len(df_matches_lost))
     except:
         list_all_win_lose_ratios.append(0)
 
-df_countries_ratios = pd.DataFrame(list(zip(list_teams_wc22, list_all_total_games_played, list_all_win_lose_ratios)),columns =['Country', 'Total Matches', 'W/L ratio']).sort_values('W/L ratio', ascending=False)
+df_countries_ratios = pd.DataFrame(list(zip(list_teams_wc22, list_all_total_games_played, list_all_wins, list_all_losses, list_all_win_lose_ratios)),columns =['Country', 'Total Matches', 'Won', 'Lost', 'W/L ratio']).sort_values('W/L ratio', ascending=False)
 
 df_countries_ratios.set_index('Country', inplace=True)
 
