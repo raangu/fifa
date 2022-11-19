@@ -30,13 +30,13 @@ df_matches_lost_team_b = df.query("losing_team == @team_b")
 
 #print(df_matches_won_team_a.to_string(index=False))
 
-st.(team_a)
-print("Matches won: "+ str(len(df_matches_won_team_a)))
-print("Machtes lost: "+str(len(df_matches_lost_team_a)))
+st.write(team_a)
+st.write("Matches won: "+ str(len(df_matches_won_team_a)))
+st.write("Machtes lost: "+str(len(df_matches_lost_team_a)))
 
-print("\r\n"+ team_b)
-print("Matches won: "+ str(len(df_matches_won_team_b)))
-print("Machtes lost: "+str(len(df_matches_lost_team_b)))
+st.write("\r\n"+ team_b)
+st.write("Matches won: "+ str(len(df_matches_won_team_b)))
+st.write("Machtes lost: "+str(len(df_matches_lost_team_b)))
 
 list_all_win_lose_ratios = []
 list_all_total_games_played = []
