@@ -32,13 +32,14 @@ df_matches_lost_team_a = df.query("losing_team == @team_a")
 df_matches_won_team_b = df.query("winning_team == @team_b")
 df_matches_lost_team_b = df.query("losing_team == @team_b")
 
+st.write("All Time")
 with col1:
-    st.write("Total matches won: "+ str(len(df_matches_won_team_a)))
-    st.write("Total matches lost: "+str(len(df_matches_lost_team_a)))
+    st.write("Won: "+ str(len(df_matches_won_team_a)))
+    st.write("Lost: "+str(len(df_matches_lost_team_a)))
 
 with col2:
-    st.write("Total matches won: " + str(len(df_matches_won_team_b)))
-    st.write("Total machtes lost: "+str(len(df_matches_lost_team_b)))
+    st.write("Won: " + str(len(df_matches_won_team_b)))
+    st.write("Lost: "+str(len(df_matches_lost_team_b)))
 
 
 df_recent_matches_won_team_a = df.query("winning_team == @team_a and year>1995")
@@ -49,15 +50,15 @@ df_recent_matches_lost_team_b = df.query("losing_team == @team_b and year>1995")
 
 #print(df_matches_won_team_a.to_string(index=False))
 
+st.write("Recent Matches")
 with col1:
-    #st.write(team_a)
-    st.write("Total matches won: "+ str(len(df_recent_matches_won_team_a)))
-    st.write("Total matches lost: "+str(len(df_recent_matches_lost_team_a)))
+    st.write("Won: "+ str(len(df_recent_matches_won_team_a)))
+    st.write("Lost: "+str(len(df_recent_matches_lost_team_a)))
 
 with col2:
     #st.write("\r\n"+ team_b)
-    st.write("Total matches won: " + str(len(df_recent_matches_won_team_b)))
-    st.write("Total machtes lost: "+str(len(df_recent_matches_lost_team_b)))
+    st.write("Won: " + str(len(df_recent_matches_won_team_b)))
+    st.write("Lost: "+str(len(df_recent_matches_lost_team_b)))
 
 list_all_win_lose_ratios = []
 list_all_total_games_played = []
