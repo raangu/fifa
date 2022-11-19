@@ -32,12 +32,14 @@ df_matches_lost_team_a = df.query("losing_team == @team_a")
 df_matches_won_team_b = df.query("winning_team == @team_b")
 df_matches_lost_team_b = df.query("losing_team == @team_b")
 
-st.write("All Time")
+
 with col1:
+    st.write("All Time")
     st.write("Won: "+ str(len(df_matches_won_team_a)))
     st.write("Lost: "+str(len(df_matches_lost_team_a)))
 
 with col2:
+    st.write("All Time")
     st.write("Won: " + str(len(df_matches_won_team_b)))
     st.write("Lost: "+str(len(df_matches_lost_team_b)))
 
@@ -50,12 +52,14 @@ df_recent_matches_lost_team_b = df.query("losing_team == @team_b and year>1995")
 
 #print(df_matches_won_team_a.to_string(index=False))
 
-st.write("Recent Matches")
+
 with col1:
+    st.write("Recent Matches")
     st.write("Won: "+ str(len(df_recent_matches_won_team_a)))
     st.write("Lost: "+str(len(df_recent_matches_lost_team_a)))
 
 with col2:
+    st.write("Recent Matches")
     #st.write("\r\n"+ team_b)
     st.write("Won: " + str(len(df_recent_matches_won_team_b)))
     st.write("Lost: "+str(len(df_recent_matches_lost_team_b)))
