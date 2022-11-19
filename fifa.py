@@ -2,14 +2,14 @@ import pandas as pd
 import streamlit as st
 #print("hello")
 
-list_teams_wc22 = ["Qatar", "Ecuador", "Senegal", "Netherlands",
+list_teams_wc22 = sorted(["Qatar", "Ecuador", "Senegal", "Netherlands",
 "England", "Iran", "USA", "Wales",
 "Argentina", "Saudi Arabia", "Mexico", "Poland",
 "France", "Australia", "Denmark", "Tunisia",
 "Spain", "Costa Rica", "Germany", "Japan",
 "Belgium", "Canada", "Morocco", "Croatia",
 "Brazil", "Serbia", "Switzerland", "Cameroon"
-"Portugal", "Ghana", "Uruguay", "South Korea"]
+"Portugal", "Ghana", "Uruguay", "South Korea"])
 
 df = pd.read_csv('wcmatches.csv')
 
