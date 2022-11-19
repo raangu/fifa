@@ -30,7 +30,7 @@ df_matches_lost_team_b = df.query("losing_team == @team_b")
 
 #print(df_matches_won_team_a.to_string(index=False))
 
-print(team_a)
+st.(team_a)
 print("Matches won: "+ str(len(df_matches_won_team_a)))
 print("Machtes lost: "+str(len(df_matches_lost_team_a)))
 
