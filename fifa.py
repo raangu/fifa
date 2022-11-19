@@ -60,6 +60,7 @@ for country in list_teams_wc22:
 df_countries_ratios = pd.DataFrame(list(zip(list_teams_wc22, list_all_total_games_played, list_all_win_lose_ratios)),columns =['country', 'games_played', 'ratio']).sort_values('ratio', ascending=False)
 
 df_countries_ratios = df_countries_ratios.reset_index()
+df_countries_ratios.drop('index')
 print(df_countries_ratios.to_string(index=False))
 
 st.write("List of countries")
