@@ -14,8 +14,12 @@ df = pd.read_csv('wcmatches.csv')
 
 #list_teams = list_unique_values = df['home_team'].unique()
 
-team_a = st.selectbox("Team A", list_teams_wc22)
-team_b = st.selectbox("Team B", list_teams_wc22)
+col1, col2 = st.columns(2)
+
+with col1:
+    team_a = st.selectbox("Team A", list_teams_wc22)
+with col2:
+    team_b = st.selectbox("Team B", list_teams_wc22)
 
 if team_a == team_b:
     team_a = 'Germany'
@@ -30,13 +34,15 @@ df_matches_lost_team_b = df.query("losing_team == @team_b")
 
 #print(df_matches_won_team_a.to_string(index=False))
 
-st.write(team_a)
-st.write("Matches won: "+ str(len(df_matches_won_team_a)))
-st.write("Machtes lost: "+str(len(df_matches_lost_team_a)))
+with col1:
+    st.write(team_a)
+    st.write("Matches won: "+ str(len(df_matches_won_team_a)))
+    st.write("Machtes lost: "+str(len(df_matches_lost_team_a)))
 
-st.write("\r\n"+ team_b)
-st.write("Matches won: "+ str(len(df_matches_won_team_b)))
-st.write("Machtes lost: "+str(len(df_matches_lost_team_b)))
+with col2:
+    st.write("\r\n"+ team_b)
+    st.write("Matches won: "+ str(len(df_matches_won_team_b)))
+    st.write("Machtes lost: "+str(len(df_matches_lost_team_b)))
 
 list_all_win_lose_ratios = []
 list_all_total_games_played = []
