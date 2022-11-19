@@ -10,7 +10,7 @@ list_teams_wc22 = sorted(["Qatar", "Ecuador", "Senegal", "Netherlands",
 "Brazil", "Serbia", "Switzerland", "Cameroon",
 "Portugal", "Ghana", "Uruguay", "South Korea"])
 
-df = pd.read_csv('wcmatches.csv')
+df = pd.read_csv('wcmatches.csv', index_col=False)
 
 #list_teams = list_unique_values = df['home_team'].unique()
 
