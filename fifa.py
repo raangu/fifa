@@ -62,4 +62,4 @@ df_countries_ratios = pd.DataFrame(list(zip(list_teams_wc22, list_all_total_game
 print(df_countries_ratios.to_string(index=False))
 
 st.write("List of countries")
-st.write(df_countries_ratios.to_string(index=False))
+st.table(df_countries_ratios)
