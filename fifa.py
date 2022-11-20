@@ -21,9 +21,9 @@ with col1:
 with col2:
     team_b = st.selectbox("Team B", list_teams_wc22)
 
-if team_a == team_b:
-    team_a = 'Germany'
-    team_b = 'Belgium'
+#if team_a == team_b:
+#    team_a = 'Germany'
+#    team_b = 'Belgium'
 
 
 df_matches_won_team_a = df.query("winning_team == @team_a")
