@@ -66,8 +66,8 @@ list_all_total_goals_won = []
 #list_all_total_goals_lost = []
 
 for country in list_teams_wc22:
-    df_matches_won = df.query("winning_team == @country")
-    df_matches_lost = df.query("losing_team == @country")
+    df_matches_won = df.query("winning_team == @country and year>2000")
+    df_matches_lost = df.query("losing_team == @country and year>2000")
 
     df_matches_won_home = df_matches_won.query("home_team == @country")
     df_matches_won_away = df_matches_won.query("away_team == @country")
