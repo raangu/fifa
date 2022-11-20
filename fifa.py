@@ -72,8 +72,8 @@ for country in list_teams_wc22:
     df_matches_won_home = df_matches_won.query("home_team == @country")
     df_matches_won_away = df_matches_won.query("away_team == @country")
 
-    total_goals_won = df_matches_won_home.sum('home_score')
-    total_goals_won = total_goals_won + df_matches_won_away.sum('away_score')
+    total_goals_won = df_matches_won_home['home_score'].sum()
+    total_goals_won = total_goals_won + df_matches_won_away['away_score'].sum()
 
     list_all_total_goals_won.append(total_goals_won)
 
