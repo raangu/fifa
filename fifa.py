@@ -75,7 +75,10 @@ for country in list_teams_wc22:
     total_goals_won = df_matches_won_home['home_score'].sum()
     total_goals_won = total_goals_won + df_matches_won_away['away_score'].sum()
 
-    list_all_total_goals_won.append(total_goals_won)
+    try:
+        list_all_total_goals_won.append(total_goals_won / len(df_matches_won))
+    except:
+        list_all_total_goals_won.append(0)
 
     #df_matches_lost_home = df_matches_lost.query("home_team == @country")
     #df_matches_lost_away = df_matches_lost.query("away_team == @country")
@@ -91,7 +94,7 @@ for country in list_teams_wc22:
     except:
         list_all_win_lose_ratios.append(0)
 
-df_countries_ratios = pd.DataFrame(list(zip(list_teams_wc22, list_all_total_games_played, list_all_wins, list_all_losses, list_all_total_goals_won, list_all_win_lose_ratios)),columns =['Country', 'Total Matches', 'Won', 'Lost', 'Goals', 'W/L ratio']).sort_values('W/L ratio', ascending=False)
+df_countries_ratios = pd.DataFrame(list(zip(list_teams_wc22, list_all_total_games_played, list_all_wins, list_all_losses, list_all_total_goals_won, list_all_win_lose_ratios)),columns =['Country', 'Total Matches', 'Won', 'Lost', 'Avg. Winning Goals', 'W/L ratio']).sort_values('W/L ratio', ascending=False)
 
 df_countries_ratios.set_index('Country', inplace=True)
 
