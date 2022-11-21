@@ -1,6 +1,8 @@
 import pandas as pd
 import streamlit as st
 
+st.subheader("Statistics for the last 5 World Cups")
+
 list_teams_wc22 = sorted(["Qatar", "Ecuador", "Senegal", "Netherlands",
 "England", "Iran", "United States", "Wales",
 "Argentina", "Saudi Arabia", "Mexico", "Poland",
@@ -29,15 +31,15 @@ df_matches_lost_team_a = df.query("losing_team == @team_a")
 df_matches_won_team_b = df.query("winning_team == @team_b")
 df_matches_lost_team_b = df.query("losing_team == @team_b")
 
-with col1:
-    st.write("All Time")
-    st.write("Won: "+ str(len(df_matches_won_team_a)))
-    st.write("Lost: "+str(len(df_matches_lost_team_a)))
+#with col1:
+#    st.write("All Time")
+#    st.write("Won: "+ str(len(df_matches_won_team_a)))
+#    st.write("Lost: "+str(len(df_matches_lost_team_a)))
 
-with col2:
-    st.write("All Time")
-    st.write("Won: " + str(len(df_matches_won_team_b)))
-    st.write("Lost: "+str(len(df_matches_lost_team_b)))
+#with col2:
+#    st.write("All Time")
+#    st.write("Won: " + str(len(df_matches_won_team_b)))
+#    st.write("Lost: "+str(len(df_matches_lost_team_b)))
 
 
 # recent matches
@@ -48,12 +50,12 @@ df_recent_matches_won_team_b = df.query("winning_team == @team_b and year>2000")
 df_recent_matches_lost_team_b = df.query("losing_team == @team_b and year>2000")
 
 with col1:
-    st.write("Last 5 World Cups")
+    #st.write("Last 5 World Cups")
     st.write("Won: "+ str(len(df_recent_matches_won_team_a)))
     st.write("Lost: "+str(len(df_recent_matches_lost_team_a)))
 
 with col2:
-    st.write("Last 5 World Cups")
+    #st.write("Last 5 World Cups")
     #st.write("\r\n"+ team_b)
     st.write("Won: " + str(len(df_recent_matches_won_team_b)))
     st.write("Lost: "+str(len(df_recent_matches_lost_team_b)))
